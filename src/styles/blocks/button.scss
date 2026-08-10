@@ -1,113 +1,6 @@
-// .button {
-//   cursor: pointer;
+@use "../utils/mixins";
+@use "../utils/vars";
 
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   width: 288px;
-//   height: 56px;
-//   margin: 290px auto 104px;
-//   border: 2px solid $color-button;
-//   border-radius: 32px;
-
-//   font-size: 16px;
-//   font-weight: 500;
-//   color: $color-button;
-//   text-transform: uppercase;
-
-//   background-color: $color-blue;
-
-//   transition:
-//     background-color 0.2s ease,
-//     border-color 0.2s ease;
-
-//   &:hover:not(:disabled) {
-//     border-color: $color-button;
-//     color: $color-blue;
-//     background-color: $color-button;
-//   }
-
-//   &:focus:not(:disabled) {
-//     border-color: $color-dark-red;
-//     color: $color-blue;
-//     background-color: $color-dark-red;
-//   }
-
-//   &:disabled {
-//     cursor: not-allowed;
-//     border-color: $color-disabled-text;
-//     color: $color-disabled-text;
-//     background-color: transparent;
-//   }
-
-//   &__content {
-//     display: flex;
-//     gap: 8px;
-//     align-items: center;
-//   }
-
-//   @include on-tablet {
-//     width: 326px;
-//     margin: 210px auto 228px;
-//   }
-
-//   @include on-desktop {
-//     width: 288px;
-//     height: 56px;
-//     margin: 64px 0;
-//   }
-
-//   &__icon {
-//     &--default {
-//       display: block;
-//     }
-
-//     &--hover {
-//       display: none;
-//     }
-//   }
-
-//   &:hover:not(:disabled) &__icon {
-//     &--default {
-//       display: none;
-//     }
-
-//     &--hover {
-//       display: block;
-//     }
-//   }
-
-//   &:focus:not(:disabled) &__icon {
-//     &--default {
-//       display: none;
-//     }
-
-//     &--hover {
-//       display: block;
-//     }
-//   }
-
-//   &:disabled &__icon {
-//     &--default {
-//       display: block;
-//     }
-
-//     &--hover {
-//       display: none;
-//     }
-//   }
-
-//   &__order {
-//     display: flex;
-//     align-items: center;
-
-//     margin: 16px 0 0;
-
-//     color: $color-button;
-//     text-transform: uppercase;
-//   }
-// }
 .button {
   cursor: pointer;
 
@@ -118,15 +11,15 @@
   width: 288px;
   height: 56px;
   margin: 290px auto 104px;
-  border: 2px solid $color-button;
+  border: 2px solid vars.$color-button;
   border-radius: 32px;
 
   font-size: 16px;
   font-weight: 500;
-  color: $color-button;
+  color: vars.$color-button;
   text-transform: uppercase;
 
-  background-color: $color-blue;
+  background-color: vars.$color-blue;
 
   transition:
     background-color 0.2s ease,
@@ -134,21 +27,21 @@
 
   &:disabled {
     cursor: not-allowed;
-    border-color: $color-disabled-text;
-    color: $color-disabled-text;
+    border-color: vars.$color-disabled-text;
+    color: vars.$color-disabled-text;
     background-color: transparent;
   }
 
   &:hover:not(:disabled) {
-    border-color: $color-button;
-    color: $color-blue;
-    background-color: $color-button;
+    border-color: vars.$color-button;
+    color: vars.$color-blue;
+    background-color: vars.$color-button;
   }
 
   &:focus:not(:disabled) {
-    border-color: $color-dark-red;
-    color: $color-blue;
-    background-color: $color-dark-red;
+    border-color: vars.$color-dark-red;
+    color: vars.$color-blue;
+    background-color: vars.$color-dark-red;
   }
 
   &__content {
@@ -157,12 +50,12 @@
     align-items: center;
   }
 
-  @include on-tablet {
+  @include mixins.on-tablet {
     width: 326px;
     margin: 210px auto 228px;
   }
 
-  @include on-desktop {
+  @include mixins.on-desktop {
     width: 288px;
     height: 56px;
     margin: 64px 0;
@@ -204,7 +97,7 @@
 
     margin: 16px 0 0;
 
-    color: $color-button;
+    color: vars.$color-button;
     text-transform: uppercase;
   }
 }

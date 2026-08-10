@@ -1,3 +1,5 @@
+@use "../utils/mixins";
+
 .top-bar {
   display: flex;
   align-items: center;
@@ -7,11 +9,11 @@
     display: none;
   }
 
-  @include on-tablet {
+  @include mixins.on-tablet {
     height: 64px;
   }
 
-  @include on-desktop {
+  @include mixins.on-desktop {
     height: 88px;
 
     .top-bar__nav {
@@ -58,7 +60,7 @@
     padding: 16px;
     transition: transform 0.2s ease;
 
-    @include on-desktop {
+    @include mixins.on-desktop {
       padding: 28px 32px;
     }
 

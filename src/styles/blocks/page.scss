@@ -1,3 +1,5 @@
+@use "../utils/vars";
+
 .page {
   scroll-behavior: smooth;
 
@@ -10,7 +12,7 @@
   &__body {
     box-sizing: border-box;
     margin: 0;
-    background: $color-blue;
+    background: vars.$color-blue;
   }
 
   &__menu {
