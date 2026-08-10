@@ -1,3 +1,5 @@
+@use "../utils/mixins";
+
 .products {
   overflow-x: hidden;
   display: grid;
@@ -6,7 +8,7 @@
   box-sizing: border-box;
   width: 100%;
 
-  @include page-grid;
+  @include mixins.page-grid;
 
   &__image {
     cursor: pointer;
@@ -14,18 +16,18 @@
     padding: 56px 0 0;
     transition: transform 0.2s ease;
 
-    @include on-tablet {
+    @include mixins.on-tablet {
       width: 328px;
       padding: 80px 0 0;
     }
 
-    @include on-desktop {
+    @include mixins.on-desktop {
       width: 402px;
       height: 512px;
     }
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
 }
@@ -35,11 +37,11 @@
   justify-self: center;
   width: 318px;
 
-  @include on-tablet {
+  @include mixins.on-tablet {
     grid-column: span 4;
   }
 
-  @include on-desktop {
+  @include mixins.on-desktop {
     grid-column: span 3;
 
     &:nth-child(6n + 1) {

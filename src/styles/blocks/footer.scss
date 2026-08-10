@@ -1,3 +1,6 @@
+@use "../utils/mixins";
+@use "../utils/vars";
+
 .footer {
   display: grid;
   grid-column: 1/-1;
@@ -7,13 +10,13 @@
 
   background-color: #1c1a26;
 
-  @include on-tablet {
+  @include mixins.on-tablet {
     grid-template-columns: repeat(1, 1fr);
     padding: 88px 44px;
     text-align: left;
   }
 
-  @include on-large-desktop {
+  @include mixins.on-large-desktop {
     padding: 88px 124px;
   }
 
@@ -30,15 +33,15 @@
       'copyright';
     grid-template-columns: 1fr;
 
-    @include on-tablet {
+    @include mixins.on-tablet {
       grid-template-areas:
         'menu contact'
         'social copyright';
       grid-template-columns: 1fr 1fr;
-      column-gap: $grid-gap-xl;
+      column-gap: vars.$grid-gap-xl;
     }
 
-    @include on-desktop {
+    @include mixins.on-desktop {
       grid-template-areas:
         'menu contact'
         'social copyright';
@@ -60,7 +63,7 @@
     align-items: center;
     justify-content: center;
 
-    @include on-tablet {
+    @include mixins.on-tablet {
       justify-content: flex-start;
     }
   }
@@ -70,7 +73,7 @@
     grid-area: copyright;
     align-items: end;
 
-    @include on-tablet {
+    @include mixins.on-tablet {
       justify-content: flex-start;
     }
   }
@@ -79,7 +82,7 @@
     display: grid;
     grid-template-columns: 1fr;
 
-    @include on-desktop {
+    @include mixins.on-desktop {
       grid-template-columns: 1fr 1fr;
       column-gap: 75px;
     }
@@ -99,13 +102,13 @@
 .link {
   cursor: pointer;
   display: inline-block;
-  color: $color-white;
+  color: vars.$color-white;
   text-decoration: none;
 
-  @include hover(transform, scale(1.1));
+  @include mixins.hover(transform, scale(1.1));
 
   &-gray {
-    color: $color-gray;
+    color: vars.$color-gray;
   }
 
   &-uppercase {
@@ -129,15 +132,15 @@
   font-size: 48px;
   font-weight: 400;
   line-height: 85%;
-  color: $color-white;
+  color: vars.$color-white;
   text-transform: uppercase;
 
-  @include on-tablet {
+  @include mixins.on-tablet {
     padding: 0;
     font-size: 56px;
   }
 
-  @include on-desktop {
+  @include mixins.on-desktop {
     font-size: 72px;
   }
 }
@@ -151,7 +154,7 @@
     width: 24px;
     height: 24px;
 
-    @include hover(transform, scale(1.1));
+    @include mixins.hover(transform, scale(1.1));
   }
 }
 
@@ -159,9 +162,9 @@
   margin: 0;
   padding: 40px 0 0;
   font-size: 16px;
-  color: $color-gray;
+  color: vars.$color-gray;
 
-  @include on-desktop {
+  @include mixins.on-desktop {
     padding: 0;
   }
 }

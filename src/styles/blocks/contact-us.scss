@@ -1,3 +1,5 @@
+@use "../utils/vars";
+
 .contact-us {
   &__nav {
     width: 288px;
@@ -17,12 +19,12 @@
   }
 
   &__link {
-    color: $color-white;
+    color: vars.$color-white;
     text-decoration: none;
   }
 
   &__call--us {
-    color: $color-gray;
+    color: vars.$color-gray;
     text-transform: uppercase;
   }
 
@@ -33,7 +35,7 @@
     font-size: 48px;
     font-weight: 400;
     line-height: 85%;
-    color: $color-white;
+    color: vars.$color-white;
     text-transform: uppercase;
   }
 }
