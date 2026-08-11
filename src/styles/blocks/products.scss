@@ -12,18 +12,29 @@
 
   &__image {
     cursor: pointer;
+
     display: block;
-    padding: 56px 0 0;
+
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    
+    object-fit: cover;
+
     transition: transform 0.2s ease;
 
     @include mixins.on-tablet {
-      width: 328px;
-      padding: 80px 0 0;
+      max-width: 328px;
     }
 
     @include mixins.on-desktop {
-      width: 402px;
-      height: 512px;
+      max-width: 402px;   // Точна ширина з Figma (1440/1200px)
+      max-height: 512px;  // Точна висота з Figma (1440/1200px)      // На десктопі з'являється точна висота
+    }
+
+    @include mixins.on-large-desktop {
+      max-width: 432px;
+      max-height: 560px;
     }
 
     &:hover {
@@ -35,10 +46,14 @@
 .card {
   grid-column: span 2;
   justify-self: center;
-  width: 318px;
+  
+  width: 100%;
+  max-width: 432px;
+  padding: 56px;
 
   @include mixins.on-tablet {
     grid-column: span 4;
+    padding: 80px;
   }
 
   @include mixins.on-desktop {
